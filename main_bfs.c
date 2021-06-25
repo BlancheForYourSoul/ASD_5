@@ -1,9 +1,3 @@
-/*
-#include <stdio.h>
-#include <stdlib.h>
-#include "generator.h"
-*/
-
 #include<windows.h>
 #include<string.h>
 #include<math.h>
@@ -68,13 +62,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                 }
             }
 
-/*            for(int i = 0; i < n5; i++){
-                for(int j = 1; j <= A1[i][0]; j++){
-                    addEdge(graph, i, A1[i][j]);
-                    printf("\nadded %d->%d", i, A1[i][j]);
-                }
-            }
-            printf("\n________________________");*/
             int **routes = bfs(graph, 0);
 
             char *nn[10] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
@@ -99,7 +86,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                             Arrow(hdc, A_cords[i][0], A_cords[i][1], A_cords[j][0], A_cords[j][1]);
                         }
                         Vertex(hdc, A_cords[j][0], A_cords[j][1], nn[j]);
-                        //delay(1);
                     }
                 }
             }
@@ -110,17 +96,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             for(int i = 0; i < n; i++){
                 Vertex(hdc, A_cords[i][0], A_cords[i][1], nn[i]);
             }
-/*
-int main() {
-    double k1 = 1.0 - n3*0.01 - n4*0.01 - 0.3;
-    double k2 = 1.0 - n3*0.005 - n4*0.005 - 0.27;
-    srand(0304);
-    int **A = get_matrix(n, k1);
-    print_2Darray(A, n);
-
-    return 0;
-}
-*/
 
             for (int k = 1; k <= routes[0][0]; k++){
                 int i = routes[0][k], j = routes[1][k];
