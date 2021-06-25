@@ -52,8 +52,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                 floor++;
                 y_cord += height;
             }
-            double k1 = 1.0 - n3*0.01 - n4*0.01 - 0.3;
-            double k2 = 1.0 - n3*0.005 - n4*0.005 - 0.27;
+            double k1 = 1.0 - n3*0.01 - n4*0.005 - 0.15;
             srand(0304);
             int **A = get_matrix(n, k1);
             print_2Darray(A, n);
